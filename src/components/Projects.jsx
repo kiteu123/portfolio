@@ -33,7 +33,7 @@ export default function Projects() {
       tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
       image: "image/websample.png",
       github: "https://github.com/kiteu123/my-website",
-      demo: "https://kiteu123.github.io/my-website/",
+      demo: "https://my-website-coral-sigma.vercel.app/",
     },
     {
       title: "Todo List App",
