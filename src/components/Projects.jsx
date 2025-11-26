@@ -31,7 +31,7 @@ export default function Projects() {
       description:
         "A simple company introduction website showcasing services and team information. Built with HTML, CSS, and JavaScript for a clean and responsive layout.",
       tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      image: "image/websample.png",
       github: "https://github.com/kiteu123/my-website",
       demo: "https://kiteu123.github.io/my-website/",
     },
@@ -40,31 +40,29 @@ export default function Projects() {
       description:
         "A modern Todo application allowing task creation, completion tracking, and easy management. Built with React for interactive and dynamic use.",
       tech: ["React", "React Hook", "JSX/HTML", "JS/ES6"],
-      image:
-        "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=800",
+      image: "image/todolist.png",
       github: "https://github.com",
-      demo: "https://example.com",
+      demo: "https://todolistsample.vercel.app/",
     },
     {
-      title: "Portfolio Website",
+      title: "Animated Web Sample",
       description:
         "Responsive portfolio website with animations, dark mode, and modern UI/UX design.",
       tech: ["React", "Tailwind CSS", "Framer Motion"],
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
-      github: "https://github.com",
-      demo: "https://example.com",
+      image: "image/Tea.gif",
+      github: "https://github.com/kiteu123/frontend/tree/main/React/nasmedia",
+      demo: "https://animatedweb-nine.vercel.app/",
     },
-    {
-      title: "Chat Application",
-      description:
-        "Real-time chat application with rooms, file sharing, emoji support, and message history.",
-      tech: ["Socket.io", "Node.js", "React"],
-      image:
-        "https://images.unsplash.com/photo-1586999768265-24af89630739?w=800",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
+    // {
+    //   title: "Chat Application",
+    //   description:
+    //     "Real-time chat application with rooms, file sharing, emoji support, and message history.",
+    //   tech: ["Socket.io", "Node.js", "React"],
+    //   image:
+    //     "https://images.unsplash.com/photo-1586999768265-24af89630739?w=800",
+    //   github: "https://github.com",
+    //   demo: "https://example.com",
+    // },
   ];
   return (
     <section id="projects" className="projects-section">
