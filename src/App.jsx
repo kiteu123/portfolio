@@ -1,91 +1,102 @@
-import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useRef, useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Navbar from "./components/Navbar";
-import { FullPage, Slide } from "react-full-page";
 
-export default function App() {
+// 스크롤 + URL 동기화 컴포넌트
+function ScrollPages() {
   const [currentSection, setCurrentSection] = useState("home");
+  const sectionRefs = useRef({
+    home: null,
+    about: null,
+    skills: null,
+    projects: null,
+    contact: null,
+  });
 
-  // ★ 슬라이드를 제어할 수 있는 ref 생성
-  const fullPageRef = useRef(null);
+  const sections = ["home", "about", "skills", "projects", "contact"];
+  const navigate = useNavigate();
 
-  const handleSlideChange = ({ to }) => {
-    const sectionIds = ["home", "about", "skills", "projects", "contact"];
-    setCurrentSection(sectionIds[to]);
-  };
+  // 스크롤 시 현재 섹션 감지 & URL 동기화
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
 
-  // ★ Navbar에서 호출할 함수
-  const goToSection = (sectionId) => {
-    const indexMap = {
-      home: 0,
-      about: 1,
-      skills: 2,
-      projects: 3,
-      contact: 4,
+      for (let sec of sections) {
+        const ref = sectionRefs.current[sec];
+        if (
+          ref &&
+          scrollPos >= ref.offsetTop &&
+          scrollPos < ref.offsetTop + ref.offsetHeight
+        ) {
+          if (currentSection !== sec) {
+            setCurrentSection(sec);
+            navigate(sec === "home" ? "/" : `/${sec}`, { replace: true });
+          }
+          break;
+        }
+      }
     };
 
-    const slideIndex = indexMap[sectionId];
-    if (fullPageRef.current) {
-      fullPageRef.current.scrollToSlide(slideIndex);
-      setCurrentSection(sectionId);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [currentSection, navigate]);
+
+  // Navbar 클릭 시 이동
+  const goToSection = (sec) => {
+    const ref = sectionRefs.current[sec];
+    if (ref) {
+      ref.scrollIntoView({ behavior: "smooth" });
+      navigate(sec === "home" ? "/" : `/${sec}`);
     }
   };
 
   return (
-    <Router>
+    <>
       <Navbar currentSection={currentSection} goToSection={goToSection} />
+      <main>
+        <section ref={(el) => (sectionRefs.current.home = el)} id="home">
+          <Hero goToSection={goToSection} />
+        </section>
 
+        <section ref={(el) => (sectionRefs.current.about = el)} id="about">
+          <About />
+        </section>
+
+        <section ref={(el) => (sectionRefs.current.skills = el)} id="skills">
+          <Skills />
+        </section>
+
+        <section
+          ref={(el) => (sectionRefs.current.projects = el)}
+          id="projects"
+        >
+          <Projects />
+        </section>
+
+        <section ref={(el) => (sectionRefs.current.contact = el)} id="contact">
+          <Contact />
+        </section>
+      </main>
+    </>
+  );
+}
+
+// App 루트
+export default function App() {
+  return (
+    <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <FullPage
-              ref={fullPageRef} // ★ ref 연결
-              afterChange={handleSlideChange}
-              controls
-              controlsProps={{ className: "my-controls" }}
-              duration={300}
-              easing="easeInQuad"
-            >
-              <Slide>
-                <div id="home">
-                  <Hero goToSection={goToSection} />
-                </div>
-              </Slide>
-              <Slide>
-                <div id="about">
-                  <About />
-                </div>
-              </Slide>
-              <Slide>
-                <div id="skills">
-                  <Skills />
-                </div>
-              </Slide>
-              <Slide>
-                <div id="projects">
-                  <Projects />
-                </div>
-              </Slide>
-              <Slide>
-                <div id="contact">
-                  <Contact />
-                </div>
-              </Slide>
-            </FullPage>
-          }
-        />
-
-        {/* 다른 페이지는 그대로 유지 */}
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<ScrollPages />} />
       </Routes>
     </Router>
   );
