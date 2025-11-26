@@ -95,10 +95,6 @@ export default function Skills() {
             "TypeScript",
             "MongoDB",
             "Git",
-            "Python",
-            "CSS",
-            "HTML",
-            "Express.js",
           ].map((skill, index) => {
             const width = getProgressWidth(index);
             return (

@@ -3,7 +3,7 @@ import "./hero.css";
 import { FiDownload, FiChevronDown } from "react-icons/fi";
 
 // https://react-icons.github.io/react-icons/
-export default function Hero() {
+export default function Hero({ goToSection }) {
   const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY); // $(window).scrollTop
@@ -53,7 +53,10 @@ export default function Hero() {
         </p>
         {/* CTA Buttons */}
         <div className="hero-buttons">
-          <button onClick={scrollToContact} className="btn-primary">
+          <button
+            onClick={() => goToSection("contact")}
+            className="btn-primary"
+          >
             Get In Touch
           </button>
           <button

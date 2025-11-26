@@ -3,17 +3,25 @@ import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ currentSection, goToSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   const navItems = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/skills", label: "Skills" },
-    { path: "/projects", label: "Projects" },
-    { path: "/contact", label: "Contact" },
+    { sectionId: "home", label: "Home" },
+    { sectionId: "about", label: "About" },
+    { sectionId: "skills", label: "Skills" },
+    { sectionId: "projects", label: "Projects" },
+    { sectionId: "contact", label: "Contact" },
   ];
+
+  const isActive = (item) => {
+    return currentSection === item.sectionId ? "active" : "";
+  };
+
+  const handleClick = (item) => {
+    goToSection(item.sectionId);
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -23,18 +31,16 @@ export default function Navbar() {
             <span className="logo-text">Portfolio</span>
           </div>
 
-          {/* Desktop */}
+          {/* Desktop Nav */}
           <div className="desktop-nav">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`nav-button ${
-                  location.pathname === item.path ? "active" : ""
-                }`}
+              <button
+                key={item.label}
+                className={`nav-button ${isActive(item)}`}
+                onClick={() => handleClick(item)}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -42,7 +48,6 @@ export default function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="mobile-menu-button"
-            aria-label="Toggle menu"
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
@@ -51,16 +56,13 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="mobile-nav">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`mobile-nav-button ${
-                  location.pathname === item.path ? "active" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                key={item.label}
+                className={`mobile-nav-button ${isActive(item)}`}
+                onClick={() => handleClick(item)}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
         )}

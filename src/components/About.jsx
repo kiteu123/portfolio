@@ -76,8 +76,10 @@ export default function About() {
   ];
 
   const handleCardClick = (index) => {
-    if (expandedIndex !== null) return; // 확장된 상태일 때는 클릭 비활성화
+    // if (expandedIndex !== null) return; // 확장된 상태일 때는 클릭 비활성화
     setActiveIndex(activeIndex === index ? null : index);
+
+    setExpandedIndex(null);
   };
 
   const handleExpand = (e, index) => {
@@ -88,6 +90,7 @@ export default function About() {
   const handleCollapse = (e) => {
     e.stopPropagation();
     setExpandedIndex(null);
+    setActiveIndex(null);
   };
 
   return (
