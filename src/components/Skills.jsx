@@ -17,6 +17,7 @@ import {
   SiNextdotjs,
 } from "react-icons/si";
 import "./skills.css";
+
 export default function Skills() {
   const skillCategories = [
     {
@@ -27,7 +28,7 @@ export default function Skills() {
         { name: "JavaScript", icon: FaJs, color: "yellow" },
         { name: "React", icon: FaReact, color: "cyan" },
         { name: "Next.js", icon: SiNextdotjs, color: "white" },
-        { name: "Tailwind", icon: SiTailwindcss, color: "lightcyan" },
+        // { name: "Tailwind", icon: SiTailwindcss, color: "lightcyan" },
       ],
     },
     {
@@ -36,8 +37,8 @@ export default function Skills() {
         { name: "Node.js", icon: FaNode, color: "green" },
         { name: "Express", icon: SiExpress, color: "gray" },
         { name: "Python", icon: FaPython, color: "lightyellow" },
-        { name: "MongoDB", icon: SiMongodb, color: "lightgreen" },
-        { name: "Docker", icon: FaDocker, color: "lightblue" },
+        // { name: "MongoDB", icon: SiMongodb, color: "lightgreen" },
+        // { name: "Docker", icon: FaDocker, color: "lightblue" },
         { name: "AWS", icon: FaAws, color: "orange" },
       ],
     },
@@ -46,14 +47,14 @@ export default function Skills() {
       skills: [
         { name: "Git", icon: FaGitAlt, color: "darkorange" },
         { name: "GitHub", icon: FaGitAlt, color: "lightgray" },
-        { name: "Docker", icon: FaDocker, color: "lightblue" },
+        // { name: "Docker", icon: FaDocker, color: "lightblue" },
         { name: "AWS", icon: FaAws, color: "orange" },
       ],
     },
   ];
 
   const getProgressWidth = (index) => {
-    const percentage = [95, 90, 85, 88, 82, 80, 92, 85, 78, 75];
+    const percentage = [95, 90, 89, 88, 85, 82, 80];
     return percentage[index] || 80;
   };
 
@@ -89,12 +90,13 @@ export default function Skills() {
         <div className="skills-bars">
           <div className="skills-bars-title">Proficiency Levels</div>
           {[
+            "Git",
             "JavaScript",
             "React",
+            "HTML",
             "Node.js",
             "TypeScript",
             "Python",
-            "Git",
           ].map((skill, index) => {
             const width = getProgressWidth(index);
             return (

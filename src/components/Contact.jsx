@@ -3,6 +3,7 @@ import "./contact.css";
 import { useState } from "react";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { RiKakaoTalkFill } from "react-icons/ri";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -17,8 +18,37 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  // 유효성 검사
+  const validateForm = () => {
+    const nameRegex = /^(?:[가-힣]{2,}|[A-Za-z]+ [A-Za-z]+)$/;
+    const emailRegex = /^[A-Za-z0-9._%+-]{2,}@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    const phoneRegex = /^0\d{1,2}-?\d{3,4}-?\d{4}$/;
+
+    // 이름 검사
+    if (!nameRegex.test(formData.name)) {
+      alert("❌ 이름 형식이 올바르지 않습니다.");
+      return false;
+    }
+
+    // 이메일 검사
+    if (!emailRegex.test(formData.email)) {
+      alert("❌ 이메일 형식이 올바르지 않습니다.");
+      return false;
+    }
+
+    // 전화번호 검사
+    if (!phoneRegex.test(formData.phone)) {
+      alert("❌ 전화번호 형식이 올바르지 않습니다.");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -84,8 +114,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <a href="mailto:your.email@example.com">
-                    your.email@example.com
+                  <a href="https://mail.google.com" target="_blank">
+                    kiteu23@gmail.com
                   </a>
                 </div>
               </div>
@@ -96,7 +126,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+82 (10) 5656-4267</p>
                 </div>
               </div>
 
@@ -106,7 +136,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Location</h4>
-                  <p>New York, USA</p>
+                  <p>Seoul, Korea</p>
                 </div>
               </div>
             </div>
@@ -116,29 +146,29 @@ export default function Contact() {
               <h4 className="social-title">Follow Me</h4>
               <div className="social-links">
                 <a
-                  href="https://linkedin.com"
+                  href="https://open.kakao.com/o/s6Kr8J3h"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <FaLinkedin />
+                  <RiKakaoTalkFill />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/kiteu123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
                 >
                   <FaGithub />
                 </a>
-                <a
+                {/* <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
                 >
                   <FaTwitter />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
