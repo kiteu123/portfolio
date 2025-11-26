@@ -8,38 +8,38 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce application with payment integration, user authentication, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management tool with real-time updates, drag-and-drop interface, and team collaboration features.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
-      title: "Social Media Dashboard",
-      description:
-        "Analytics dashboard for social media metrics with data visualization, export features, and customizable reports.",
-      tech: ["Next.js", "Chart.js", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
       title: "Weather App",
       description:
         "Beautiful weather application with forecast data, interactive maps, and location-based services.",
-      tech: ["React", "OpenWeather API", "Leaflet"],
+      tech: ["React", "CSS", "Fetch"],
+      image:
+        "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=800",
+      github: "https://github.com/kiteu123/frontend/tree/main/React/weather2",
+      demo: "https://weather-jet-two.vercel.app/",
+    },
+    {
+      title: "Subway Homepage",
+      description:
+        "An interactive homepage with dropdown menus and dynamic routing. Clicking on a menu smoothly navigates to the corresponding section using React Router.",
+      tech: ["React", "React Router", "TypeScript", "CSS"],
+      image: "/image/subway.jpg",
+      github: "https://github.com/kiteu123/frontend/tree/main/React/subway2",
+      demo: "https://subwaytypescript.vercel.app/",
+    },
+    {
+      title: "Web Sample",
+      description:
+        "A simple company introduction website showcasing services and team information. Built with HTML, CSS, and JavaScript for a clean and responsive layout.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      github: "https://github.com/kiteu123/my-website",
+      demo: "https://kiteu123.github.io/my-website/",
+    },
+    {
+      title: "Todo List App",
+      description:
+        "A modern Todo application allowing task creation, completion tracking, and easy management. Built with React for interactive and dynamic use.",
+      tech: ["React", "React Hook", "JSX/HTML", "JS/ES6"],
       image:
         "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=800",
       github: "https://github.com",
