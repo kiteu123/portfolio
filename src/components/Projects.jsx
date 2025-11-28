@@ -53,16 +53,15 @@ export default function Projects() {
       github: "https://github.com/kiteu123/frontend/tree/main/React/nasmedia",
       demo: "https://animatedweb-nine.vercel.app/",
     },
-    // {
-    //   title: "Chat Application",
-    //   description:
-    //     "Real-time chat application with rooms, file sharing, emoji support, and message history.",
-    //   tech: ["Socket.io", "Node.js", "React"],
-    //   image:
-    //     "https://images.unsplash.com/photo-1586999768265-24af89630739?w=800",
-    //   github: "https://github.com",
-    //   demo: "https://example.com",
-    // },
+    {
+      title: "Movie-showcase",
+      description:
+        "Real-time chat application with rooms, file sharing, emoji support, and message history.",
+      tech: ["Socket.io", "Node.js", "React"],
+      image: "image/movie.jpg",
+      github: "https://github.com/kiteu123/frontend/tree/main/movie-showcase",
+      demo: "https://movie-showcase-nine.vercel.app/",
+    },
   ];
   return (
     <section id="projects" className="projects-section">
