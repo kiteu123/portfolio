@@ -57,7 +57,7 @@ export default function Projects() {
       title: "Movie-showcase",
       description:
         "Real-time chat application with rooms, file sharing, emoji support, and message history.",
-      tech: ["Socket.io", "Node.js", "React"],
+      tech: ["React", "Tailwind cSS", "TMDB API"],
       image: "image/movie.jpg",
       github: "https://github.com/kiteu123/frontend/tree/main/movie-showcase",
       demo: "https://movie-showcase-nine.vercel.app/",
