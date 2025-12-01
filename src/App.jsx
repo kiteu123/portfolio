@@ -26,13 +26,6 @@ function ScrollPages() {
   const sections = ["home", "about", "projects", "contact"];
   const navigate = useNavigate();
 
-  // 🟢 새로고침 시 URL 초기화
-  useEffect(() => {
-    if (window.location.pathname !== "/") {
-      window.history.replaceState(null, null, "/");
-    }
-  }, []);
-
   // 스크롤 시 현재 섹션 감지 & URL 동기화
   useEffect(() => {
     const handleScroll = () => {
