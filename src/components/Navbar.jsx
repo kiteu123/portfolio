@@ -9,7 +9,7 @@ export default function Navbar({ currentSection, goToSection }) {
   const navItems = [
     { sectionId: "home", label: "Home" },
     { sectionId: "about", label: "About" },
-    { sectionId: "skills", label: "Skills" },
+    // { sectionId: "skills", label: "Skills" },
     { sectionId: "projects", label: "Projects" },
     { sectionId: "contact", label: "Contact" },
   ];

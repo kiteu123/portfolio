@@ -17,23 +17,16 @@ export default function Projects() {
       github: "https://github.com/kiteu123/frontend/tree/main/React/weather2",
       demo: "https://weather-jet-two.vercel.app/",
     },
+
     {
-      title: "Subway Homepage",
+      title: "Weather App 2",
       description:
-        "An interactive homepage with dropdown menus and dynamic routing. Clicking on a menu smoothly navigates to the corresponding section using React Router.",
-      tech: ["React", "React Router", "TypeScript", "CSS"],
-      image: "/image/subway.jpg",
-      github: "https://github.com/kiteu123/frontend/tree/main/React/subway2",
-      demo: "https://subwaytypescript.vercel.app/",
-    },
-    {
-      title: "Web Sample",
-      description:
-        "A simple company introduction website showcasing services and team information. Built with HTML, CSS, and JavaScript for a clean and responsive layout.",
+        "A weather-based clothing recommendation app that suggests outfits tailored to current weather conditions. Built with React and deployed on Vercel for instant access.",
       tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
-      image: "image/websample.png",
-      github: "https://github.com/kiteu123/my-website",
-      demo: "https://my-website-coral-sigma.vercel.app/",
+      image: "image/weather2.png",
+      github:
+        "https://github.com/kiteu123/frontend/tree/main/React/weather-app",
+      demo: "https://weather-app2-red-tau.vercel.app/",
     },
     {
       title: "Todo List App",
@@ -45,19 +38,30 @@ export default function Projects() {
       demo: "https://todolistsample.vercel.app/",
     },
     {
+      title: "Game List",
+      description:
+        "A Steam game showcase that lets users browse top-rated games by genre, search by name, and load more games with infinite scroll. Each game displays its name, cover image, and rating based on SteamSpy data.",
+      tech: ["React", "Tailwind CSS", "Steam API", "JavaScript(ES6)"],
+      image: "/image/game2.png",
+      github: "https://github.com/kiteu123/frontend/tree/main/steam-top-rated",
+      demo: "https://steamgamerating.vercel.app/",
+    },
+
+    {
       title: "Animated Web Sample",
       description:
-        "Responsive portfolio website with animations, dark mode, and modern UI/UX design.",
+        "This code creates a simple bouncing-ball survival game where the player must click the falling ball to make it bounce and avoid hitting the floor. ",
       tech: ["React", "Tailwind CSS", "Framer Motion"],
-      image: "image/Tea.gif",
-      github: "https://github.com/kiteu123/frontend/tree/main/React/nasmedia",
-      demo: "https://animatedweb-nine.vercel.app/",
+      image: "image/game.PNG",
+      github:
+        "https://github.com/kiteu123/frontend/tree/main/animated-web-game",
+      demo: "https://animated-web-game.vercel.app/",
     },
     {
       title: "Movie-showcase",
       description:
-        "Real-time chat application with rooms, file sharing, emoji support, and message history.",
-      tech: ["React", "Tailwind cSS", "TMDB API"],
+        "A responsive movie showcase app that lets users search and filter movies by title, genre, year, and sort by popularity, rating, or release date. Clicking a movie opens a modal with detailed information, including poster, genres, rating, and overview",
+      tech: ["React", "Tailwind CSS", "TMDB API", "Modal UI", "JavaScript"],
       image: "image/movie.jpg",
       github: "https://github.com/kiteu123/frontend/tree/main/movie-showcase",
       demo: "https://movie-showcase-nine.vercel.app/",

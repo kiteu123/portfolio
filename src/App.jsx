@@ -8,7 +8,7 @@ import {
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
+// import Skills from "./components/Skills"; // 현재 사용 안 함
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
@@ -18,13 +18,20 @@ function ScrollPages() {
   const sectionRefs = useRef({
     home: null,
     about: null,
-    skills: null,
+    // skills: null,
     projects: null,
     contact: null,
   });
 
-  const sections = ["home", "about", "skills", "projects", "contact"];
+  const sections = ["home", "about", "projects", "contact"];
   const navigate = useNavigate();
+
+  // 🟢 새로고침 시 URL 초기화
+  useEffect(() => {
+    if (window.location.pathname !== "/") {
+      window.history.replaceState(null, null, "/");
+    }
+  }, []);
 
   // 스크롤 시 현재 섹션 감지 & URL 동기화
   useEffect(() => {
@@ -72,9 +79,9 @@ function ScrollPages() {
           <About />
         </section>
 
-        <section ref={(el) => (sectionRefs.current.skills = el)} id="skills">
+        {/* <section ref={(el) => (sectionRefs.current.skills = el)} id="skills">
           <Skills />
-        </section>
+        </section> */}
 
         <section
           ref={(el) => (sectionRefs.current.projects = el)}
