@@ -40,11 +40,11 @@ export default function Projects() {
     {
       title: "Game List",
       description:
-        "A Steam game showcase that lets users browse top-rated games by genre, search by name, and load more games with infinite scroll. Each game displays its name, cover image, and rating based on SteamSpy data.",
-      tech: ["React", "Tailwind CSS", "Steam API", "JavaScript(ES6)"],
+        "A game showcase that lets users browse top-rated games by genre, search by name, and load more games with infinite scroll. Each game displays its name, cover image, and rating based on SteamSpy data.",
+      tech: ["React", "Tailwind CSS", "RAWG API", "JavaScript(ES6)"],
       image: "/image/game2.png",
       github: "https://github.com/kiteu123/frontend/tree/main/steam-top-rated",
-      demo: "https://steamgamerating.vercel.app/",
+      demo: "https://steamgamerating2.vercel.app/",
     },
 
     {
