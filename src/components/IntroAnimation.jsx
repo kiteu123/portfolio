@@ -12,13 +12,21 @@ const IntroAnimation = ({ onAnimationEnd }) => {
   const ANIMATION_DURATION = 3500; // 3.5초 (도형 애니메이션 3초 + 페이드 아웃 0.5초)
 
   useEffect(() => {
-    // 애니메이션 완료 후 onAnimationEnd 함수 호출
+    // 글자 흩어짐 애니메이션 초기 설정
+    const textSpans = document.querySelectorAll(".loading-text span");
+    textSpans.forEach((span) => {
+      const x = Math.random() * 200 - 100; // -100 ~ 100px
+      const y = Math.random() * 200 - 100;
+      span.style.setProperty("--x", `${x}px`);
+      span.style.setProperty("--y", `${y}px`);
+    });
+
+    // 인트로 전체 애니메이션 종료 후 부모에 알림
     const timer = setTimeout(() => {
-      // 인트로 화면 자체를 숨기기 전에 부모 컴포넌트에 알림
       onAnimationEnd();
     }, ANIMATION_DURATION);
 
-    return () => clearTimeout(timer); // 클린업
+    return () => clearTimeout(timer);
   }, [onAnimationEnd]);
 
   return (
@@ -26,9 +34,23 @@ const IntroAnimation = ({ onAnimationEnd }) => {
       <div className="shape-container">
         <div className="shape circle"></div>
         <div className="shape square"></div>
-        <div className="shape triangle"></div>
+        <div className="shape circle2"></div>
+        <div className="shape square2"></div>
       </div>
-      <h2 className="loading-text">Loading Portfolio...</h2>
+      <div className="loading-text">
+        {" "}
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
     </div>
   );
 };

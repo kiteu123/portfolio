@@ -1,5 +1,3 @@
-/* src/components/IntroAnimation.css */
-
 /* --- 1. 인트로 화면 기본 스타일 --- */
 .intro-screen {
   position: fixed;
@@ -7,23 +5,21 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #0a0a0a; /* body 배경색과 동일하게 설정 */
-  z-index: 9999; /* 모든 요소 위에 표시 */
+  background-color: #0a0a0a;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 0.5s ease-out; /* 페이드 아웃 효과 */
+  transition: opacity 0.5s ease-out 4s;
 }
 
-/* 애니메이션 완료 후 (App.jsx에서 이 클래스를 추가할 예정) */
 .intro-screen.fade-out {
   opacity: 0;
-  /* display: none; 은 transition 후에 JS로 처리하는 것이 좋습니다. */
 }
 
-/* --- 2. 도형 컨테이너 및 기본 도형 스타일 --- */
+/* --- 2. 도형 컨테이너 --- */
 .shape-container {
   position: relative;
   width: 300px;
@@ -37,87 +33,161 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  opacity: 0; /* 초기에는 숨김 */
+  opacity: 0;
 }
 
+/* --- 3. 도형 색상 및 애니메이션 --- */
 .circle {
   border-radius: 50%;
-  background-color: #f1c40f; /* 노란색 */
-  animation: moveCircle 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s forwards;
+  background: linear-gradient(to right, #ec4899, #60a5fa, #a855f7);
+  animation: moveCircle 4.75s ease-in-out 0.2s forwards;
 }
 
 .square {
-  background-color: #e74c3c; /* 빨간색 */
-  animation: moveSquare 3s ease-in-out 0.1s forwards;
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+  animation: moveSquare 4.75s ease-in-out 0.2s forwards;
 }
 
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid #3498db; /* 파란색 */
-  animation: moveTriangle 3s ease-in-out forwards;
+.circle2 {
+  border-radius: 50%;
+  background: linear-gradient(to right, #3b82f6, #ec4899, #a855f7);
+  animation: moveCircle2 4.75s ease-in-out 0.2s forwards;
 }
 
-/* --- 3. 로딩 텍스트 스타일 --- */
-.loading-text {
+.square2 {
+  background: linear-gradient(to right, #ec4899, #a855f7, #60a5fa);
+  animation: moveSquare2 4.75s ease-in-out 0.2s forwards;
+}
+
+/* --- 4. 로딩 텍스트 --- */
+/* .loading-text {
   position: absolute;
   bottom: 20%;
   color: #95a5a6;
   font-size: 1.2rem;
   animation: pulse 1.5s infinite alternate;
-}
+} */
 
-/* --- 4. Keyframes (애니메이션 정의) --- */
+/* --- 5. Keyframes --- */
 
+/* Circle: 왼쪽 위 → 오른쪽 아래 */
 @keyframes moveCircle {
   0% {
-    transform: translate(0, 0) scale(0.5);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-100px, -50px) rotate(180deg) scale(1.5);
-  }
-  100% {
-    transform: translate(0, 0) scale(0);
+    transform: translate(-150px, -150px) scale(0.1);
     opacity: 0;
   }
-}
-
-@keyframes moveSquare {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(1.5);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(100px, 50px) rotate(360deg) scale(0.8);
-  }
-  100% {
-    transform: translate(0, 0) rotate(720deg) scale(0);
-    opacity: 0;
-  }
-}
-
-@keyframes moveTriangle {
-  0% {
+  20% {
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
-  50% {
-    transform: translate(0, 100px) rotate(90deg);
+  70% {
+    transform: translate(0, 0) scale(1.2);
+    opacity: 1;
   }
   100% {
-    transform: translate(0, 0) scale(0);
+    transform: translate(150px, 150px) scale(0.1);
     opacity: 0;
   }
 }
 
-@keyframes pulse {
+/* Square: 오른쪽 위 → 왼쪽 아래 */
+@keyframes moveSquare {
+  0% {
+    transform: translate(150px, -150px) rotate(720deg) scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150px, 150px) rotate(-90deg) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* Circle2: 오른쪽 아래 → 왼쪽 위 */
+@keyframes moveCircle2 {
+  0% {
+    transform: translate(150px, 150px) scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, 0) scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150px, -150px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* Square2: 왼쪽 아래 → 오른쪽 위 */
+@keyframes moveSquare2 {
+  0% {
+    transform: translate(-150px, 150px) rotate(-720deg) scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, 0) rotate(-360deg) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150px, -150px) rotate(-90deg) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* 로딩 텍스트 pulse */
+/* @keyframes pulse {
   from {
     opacity: 0.6;
   }
   to {
     opacity: 1;
+  }
+} */
+
+.loading-text span {
+  display: inline-block;
+  opacity: 0;
+  color: white;
+  font-size: 1.4rem;
+  transform: translate(var(--x, 0px), var(--y, 0px)) scale(0.5) rotate(-180deg);
+  animation: textScatter 3.55s forwards;
+}
+
+@keyframes textScatter {
+  0% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.5) rotate(-180deg);
+  }
+  25% {
+    opacity: 0.25;
+    /* transform: translate(0px, 0px) scale(0.8) rotate(10deg);  */
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(0px, 0px) scale(1.2) rotate(20deg);
+  }
+  75% {
+    opacity: 0.75;
+    /* transform: translate(0px, 0px) scale(0.9) rotate(-10deg);  */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
   }
 }
