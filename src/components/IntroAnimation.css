@@ -40,23 +40,23 @@
 .circle {
   border-radius: 50%;
   background: linear-gradient(to right, #ec4899, #60a5fa, #a855f7);
-  animation: moveCircle 4.75s ease-in-out 0.2s forwards;
+  animation: moveCircle 3.5s ease-in-out 0.2s forwards;
 }
 
 .square {
   background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
-  animation: moveSquare 4.75s ease-in-out 0.2s forwards;
+  animation: moveSquare 3s ease-in-out 0.2s forwards;
 }
 
 .circle2 {
   border-radius: 50%;
   background: linear-gradient(to right, #3b82f6, #ec4899, #a855f7);
-  animation: moveCircle2 4.75s ease-in-out 0.2s forwards;
+  animation: moveCircle2 3.5s ease-in-out 0.2s forwards;
 }
 
 .square2 {
   background: linear-gradient(to right, #ec4899, #a855f7, #60a5fa);
-  animation: moveSquare2 4.75s ease-in-out 0.2s forwards;
+  animation: moveSquare2 3s ease-in-out 0.2s forwards;
 }
 
 /* --- 4. 로딩 텍스트 --- */
@@ -76,18 +76,18 @@
     transform: translate(-150px, -150px) scale(0.1);
     opacity: 0;
   }
-  20% {
+  50% {
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
-  70% {
+  100% {
     transform: translate(0, 0) scale(1.2);
     opacity: 1;
   }
-  100% {
-    transform: translate(150px, 150px) scale(0.1);
+  /* 100% {
+    transform: translate(150px, 150px) scale(0.1);  
     opacity: 0;
-  }
+  } */
 }
 
 /* Square: 오른쪽 위 → 왼쪽 아래 */
@@ -96,18 +96,18 @@
     transform: translate(150px, -150px) rotate(720deg) scale(0.1);
     opacity: 0;
   }
-  20% {
+  50% {
     transform: translate(0, 0) rotate(360deg) scale(1);
     opacity: 1;
   }
-  70% {
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
   }
-  100% {
-    transform: translate(-150px, 150px) rotate(-90deg) scale(0.1);
+  /* 100% {
+    transform: translate(-150px, 150px) rotate(-90deg) scale(0.1);  
     opacity: 0;
-  }
+  } */
 }
 
 /* Circle2: 오른쪽 아래 → 왼쪽 위 */
@@ -116,18 +116,18 @@
     transform: translate(150px, 150px) scale(0.1);
     opacity: 0;
   }
-  20% {
+  50% {
     transform: translate(0, 0) scale(1.2);
     opacity: 1;
   }
-  70% {
+  100% {
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
-  100% {
-    transform: translate(-150px, -150px) scale(0.1);
+  /* 100% { 
+    transform: translate(-150px, -150px) scale(0.1);  
     opacity: 0;
-  }
+  } */
 }
 
 /* Square2: 왼쪽 아래 → 오른쪽 위 */
@@ -136,18 +136,18 @@
     transform: translate(-150px, 150px) rotate(-720deg) scale(0.1);
     opacity: 0;
   }
-  20% {
+  50% {
     transform: translate(0, 0) rotate(-360deg) scale(1);
     opacity: 1;
   }
-  70% {
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
   }
-  100% {
-    transform: translate(150px, -150px) rotate(-90deg) scale(0.1);
+  /* 100% {
+    transform: translate(150px, -150px) rotate(-90deg) scale(0.1);  
     opacity: 0;
-  }
+  } */
 }
 
 /* 로딩 텍스트 pulse */
