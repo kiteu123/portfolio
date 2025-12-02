@@ -34,7 +34,7 @@ export default function Projects() {
         "A modern Todo application allowing task creation, completion tracking, and easy management. Built with React for interactive and dynamic use.",
       tech: ["React", "React Hook", "JSX/HTML", "JS/ES6"],
       image: "image/todolist.png",
-      github: "https://github.com",
+      github: "https://github.com/kiteu123/frontend/tree/main/ex02",
       demo: "https://todolistsample.vercel.app/",
     },
     {
