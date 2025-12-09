@@ -90,16 +90,18 @@
 } */
 
 .about-services {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap; /*추가 */
-  justify-content: center; /*추가 */
+  /* display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;  */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 2fr));
+
   gap: 1.5rem;
 }
 
 .service-card {
   background: #111827;
-  padding: 1.5rem;
+  padding: 1.4rem;
   border-radius: 0.5rem;
   border: 1px solid #1a1a1a;
   transition: all 0.3s;
@@ -111,10 +113,12 @@
   /* align-items: flex-start; */
   /* 상단에 정렬 */
   gap: 1rem;
-
-  width: 500px; /*추가 */
-  height: 400px; /*추가 */
-  cursor: pointer; /*추가 */
+  /* width: 500px;
+  height: 400px;  */
+  width: 100%;
+  min-height: 260px;
+  height: auto;
+  cursor: pointer;
 }
 
 .service-card:hover {
