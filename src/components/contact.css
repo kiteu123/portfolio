@@ -173,3 +173,13 @@
   text-align: center;
   color: #9ca3af;
 }
+
+.success-message,
+.error-message {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}

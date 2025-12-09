@@ -1,6 +1,6 @@
 import React from "react";
 import "./contact.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { RiKakaoTalkFill } from "react-icons/ri";
@@ -17,6 +17,16 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  useEffect(() => {
+    if (submitStatus) {
+      const timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 2000); // 3초 후 자동 제거
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   // 유효성 검사
   const validateForm = () => {
