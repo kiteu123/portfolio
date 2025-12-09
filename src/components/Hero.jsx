@@ -41,15 +41,15 @@ export default function Hero({ goToSection }) {
           <div className="greeting-text">Hello, I'm</div>
         </div>
         {/* Name */}
-        <h1 className="hero-name">Your Name</h1>
+        <h1 className="hero-name">Yeonwoo Kang</h1>
 
         {/* Title */}
         <h2 className="hero-title">Full Stack Developer</h2>
 
         {/* Description */}
         <p className="hero-description">
-          I create beautiful and functional web experiences. Passionate about
-          clean code and modern design.
+          I create thoughtful, easy-to-use web experiences inspired by clean
+          code and modern design.
         </p>
         {/* CTA Buttons */}
         <div className="hero-buttons">

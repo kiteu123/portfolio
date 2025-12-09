@@ -13,7 +13,7 @@ export default function About() {
       title: "ABOUT ME",
       brief: "사용자 중심의 프론트 엔드 개발자",
       description:
-        "안녕하세요! 저는 React와 TypeScript를 주로 사용하는 프론트엔드 개발자입니다.",
+        "안녕하세요! 저는 React를 주로 사용하는 프론트엔드 개발자입니다.",
       expandedContent: (
         <>
           <h4>더 깊은 이야기</h4>
