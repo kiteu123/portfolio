@@ -94,7 +94,14 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="about-section">
+    <section
+      id="about"
+      className="about-section"
+      onClick={() => {
+        setActiveIndex(null);
+        setExpandedIndex(null);
+      }}
+    >
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
@@ -110,7 +117,10 @@ export default function About() {
               className={`service-card ${
                 activeIndex === index ? "active" : ""
               }`}
-              onClick={() => handleCardClick(index)}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleCardClick(index);
+              }}
             >
               {/* --- 확장된 상태 --- */}
               {expandedIndex === index ? (
