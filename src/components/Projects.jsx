@@ -75,9 +75,6 @@ export default function Projects() {
             My <span className="highlight">Projects</span>
           </h2>
           <div className="section-divider"></div>
-          <p className="section-subtitle">
-            A collection of my recent work showcasing my skills and experience
-          </p>
         </div>
         <div className="projects-grid">
           {projects.map((project, index) => (

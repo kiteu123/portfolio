@@ -98,22 +98,13 @@ export default function Contact() {
             Get In <span className="highlight">Touch</span>
           </h2>
           <div className="section-divider"></div>
-          <p className="section-subtitle">
-            Feel free to reach out if you want to collaborate or just want to
-            chat
-          </p>
         </div>
 
         <div className="contact-grid">
           {/* Contact Info */}
           <div className="contact-info">
             <div>
-              <h3 className="contact-info-title">Let's Talk</h3>
-              <p className="contact-info-text">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your visions. Feel free to get in
-                touch.
-              </p>
+              <h3 className="contact-info-title">CONTACT ME</h3>
             </div>
 
             {/* Contact Details */}

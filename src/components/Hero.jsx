@@ -59,13 +59,13 @@ export default function Hero({ goToSection }) {
           >
             Get In Touch
           </button>
-          <button
+          {/* <button
             className="btn-secondary"
             onClick={() => window.open("/cv.pdf", "_blank")}
           >
             <FiDownload />
             Download CV
-          </button>
+          </button> */}
         </div>
         {/* Scroll indicator */}
         <div className="scroll-indicator">
