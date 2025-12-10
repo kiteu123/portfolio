@@ -252,10 +252,9 @@ EmailJS 연동 가능
 
 GitHub: https://github.com/kiteu123
 
-Email: your-email@example.com
+Email: kiteu23@gmail.com
 
-Portfolio: https://your-portfolio-url.com
- (옵션)
+Portfolio: [https://your-portfolio-url.com](https://portfolio-alpha-neon-nrmog8aee2.vercel.app/projects)
 
 ⭐ Support
 
